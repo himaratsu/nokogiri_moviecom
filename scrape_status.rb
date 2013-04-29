@@ -10,11 +10,6 @@ url = ARGV[0]
 charset = nil
 http_status_code = 0
 html = open(url) do |f|
-  http_status_code = f.status[0]
-  if http_status_code != "200"
-    p "Http Status Invalid: #{http_status_code}"
-    exit()
-  end
   charset = f.charset
   f.read
 end
